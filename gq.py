@@ -38,16 +38,16 @@ def isFall(w,h):
 #open the input video file
 input_movie=cv2.VideoCapture('cs4.mp4')
 
-length = int(input_movie.get(cv2.cv.CV_CAP_PROP_FRAME_COUNT))
+length = int(input_movie.get(cv2.CAP_PROP_FRAME_COUNT))
 
 # Create an output movie file (make sure resolution/frame rate matches input video!)
 #get fps the size 
-fps = input_movie.get(cv2.cv.CV_CAP_PROP_FPS)  
-size = (int(input_movie.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH)),   
-        int(input_movie.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))) 
+fps = input_movie.get(cv2.CAP_PROP_FPS)  
+size = (int(input_movie.get(cv2.CAP_PROP_FRAME_WIDTH)),   
+        int(input_movie.get(cv2.CAP_PROP_FRAME_HEIGHT))) 
 
 #define the type of the output movie  
-output_movie = cv2.VideoWriter('out_cs4.avi', cv2.cv.CV_FOURCC('M', 'J', 'P', 'G'), fps, size)  
+output_movie = cv2.VideoWriter('out_cs4.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), fps, size)  
 #output_movie = cv2.VideoWriter('output_cs1.avi', -1, fps, size)
 
 # load network and weights
